@@ -1,0 +1,25 @@
+version: '3.3'
+services:
+    web:
+      build:
+        context: ./
+        dockerfile: Dockerfile
+      container_name: php7
+      volumes:
+        - ./src:/var/www/html/
+      ports:
+        - 8000:80
+      depends_on:
+        - db
+      networks:
+        - php7-mongo-network
+    db:
+      image: mongo:latest
+      container_name: mongo-db
+      restart: always
+      ports:
+        - '27017:27017'
+      networks:
+        - php7-mongo-network
+networks:
+  php7-mongo-network:
