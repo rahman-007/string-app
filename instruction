@@ -1,0 +1,6 @@
+step 1. Navigate to the project folder 
+step 2. run 'docker-compose up' in command line 
+step 3. browse http://localhost:8000/string.php 
+
+The string input will be taken as 'first name'. 
+After submission, 'first name', 'full name' and date will be inserted into mongodb database.
